@@ -2,29 +2,42 @@
 $:.push File.expand_path("../lib", __FILE__)
 require 'best_in_place/version'
 
-Gem::Specification.new do |s|
-  s.name        = "best_in_place"
-  s.version     = BestInPlace::VERSION
-  s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Bernat Farrero"]
-  s.email       = ["bernat@itnig.net"]
-  s.homepage    = "http://github.com/bernat/best_in_place"
-  s.summary     = <<SUM
-  It makes any field in place editable by clicking on it, it works for inputs,
-  textareas, select dropdowns and checkboxes
-SUM
-  s.description = <<DESC
-  BestInPlace is a jQuery script and a Rails helper that provide the method best_in_place to display
-  any object field easily editable for the user by just clicking on it. It supports input data,
-  text data, boolean data and custom dropdown data. It works with RESTful controllers.
-DESC
+Gem::Specification.new do |spec|
+  
+  spec.name          = "best_in_place"
+  spec.version       = BestInPlace::VERSION
+  spec.platform      = Gem::Platform::RUBY
+  spec.authors       = ["AdilZahid"]
+  spec.email         = ["adil3267@gmail.com"]
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {spec}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  spec.summary       = "This gem is an wrapper to support select2 in best-in-place gem."
+  spec.homepage      = "https://github.com/AdilZahid/best_in_place_select2"
+  spec.required_ruby_version = ">= 2.4.0"
 
-  s.add_runtime_dependency 'actionpack', '>= 3.2'
-  s.add_runtime_dependency 'railties', '>= 3.2'
+  spec.metadata["allowed_push_host"] = spec.homepage
+
+  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["source_code_uri"] = spec.homepage
+
+  # Specify which files should be added to the gem when it is released.
+  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
+  spec.files = Dir.chdir(File.expand_path(__dir__)) do
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{\A(?:test|spec|features)/}) }
+  end
+  spec.bindir        = "exe"
+
+  # Uncomment to register a new dependency of your gem
+  # spec.add_dependency "example-gem", "~> 1.0"
+
+  # For more information and examples about making a new gem, checkout our
+  # guide at: https://bundler.io/guides/creating_gem.html
+
+  spec.files         = `git ls-files`.split("\n")
+  spec.test_files    = `git ls-files -- {spec}/*`.split("\n")
+  spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  spec.require_paths = ["lib"]
+
+  spec.add_runtime_dependency 'actionpack', '>= 3.2'
+  spec.add_runtime_dependency 'railties', '>= 3.2'
 
 end
