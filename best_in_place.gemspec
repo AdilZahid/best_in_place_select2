@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require 'best_in_place/version'
 
 Gem::Specification.new do |spec|
-  
+
   spec.name          = "best_in_place"
   spec.version       = BestInPlace::VERSION
   spec.platform      = Gem::Platform::RUBY
@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/AdilZahid/best_in_place_select2"
   spec.required_ruby_version = ">= 2.4.0"
 
-  spec.metadata["allowed_push_host"] = spec.homepage
+  spec.metadata["allowed_push_host"] = "http://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
